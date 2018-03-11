@@ -71,4 +71,11 @@ function pointDrawer(chaosGenerator)
 }
 
 var triangleChaosGame = chaosGameGenerator(3);
-var pDrawer = pointDrawer(triangleChaosGame);
+var pDrawer = null;
+var spacePressed = false;
+document.addEventListener('keydown', function(event){
+    if(!spacePressed && event.keyCode === 32 ){
+        spacePressed = true;
+        pDrawer = pointDrawer(triangleChaosGame);
+    }
+});
